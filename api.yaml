@@ -1,0 +1,38 @@
+---
+swagger: '2.0'
+info:
+  version: v2
+  title: RTCM
+  description: RTCM description
+schemes:
+  - https
+paths:
+  /calls/{callId}:
+    parameters:
+      - name: callId
+        in: path
+        required: true
+        type: string
+    delete:
+      operationId: hangupCall
+      description: Hang up call
+      responses:
+        204:
+          description: Call hung up
+    get:
+      operationId: getCall
+      description: Get a specific call
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: '#/definitions/Call'
+
+definitions:
+  Call:
+    type: object
+    properties:
+      id:
+        type: string
+
+
