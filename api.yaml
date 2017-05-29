@@ -6,6 +6,10 @@ info:
   description: RTCM description
 schemes:
   - https
+consumes:
+  - application/json
+produces:
+  - application/json
 paths:
   /calls/{callId}:
     parameters:
